@@ -22,28 +22,29 @@ const Index = () => {
   const services = [
     {
       icon: Truck,
-      title: "Road Freight",
+      title: "Road Import & Export",
       description: "Reliable trucking services across South Africa and neighboring countries",
       features: ["Full Truckload (FTL)", "Less Than Truckload (LTL)", "Express Delivery"]
     },
     {
       icon: Ship,
-      title: "Sea Freight",
+      title: "Sea Import & Export",
       description: "Cost-effective ocean shipping for international cargo",
       features: ["FCL & LCL Services", "Port-to-Port", "Door-to-Door"]
     },
     {
       icon: Plane,
-      title: "Air Freight",
+      title: "Air Import & Export",
       description: "Fast and secure air cargo services worldwide",
       features: ["Express Air", "Standard Air", "Charter Services"]
     },
     {
-      icon: Train,
-      title: "Rail Freight",
-      description: "Efficient rail transport for bulk and container cargo",
-      features: ["Container Rail", "Bulk Cargo", "Intermodal Services"]
+  icon: Train,
+  title: "International & Domestic Courier",
+  description: "Fast and reliable courier services for local and international deliveries",
+  features: ["Door-to-Door Delivery", "Express Shipping", "Worldwide Coverage"]
     }
+
   ];
 
   const features = [

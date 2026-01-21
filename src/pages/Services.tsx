@@ -64,17 +64,18 @@ const Services = () => {
     },
     {
       icon: Train,
-      title: "Rail Freight Services",
-      description: "Efficient and environmentally friendly rail transport for bulk and container cargo",
-      image: "https://images.unsplash.com/photo-1763752194641-3c5638aec65e?w=600&auto=format&fit=crop&q=80",
-      features: [
-        "Container Rail Transport - Intermodal container services",
-        "Bulk Cargo Rail - Coal, minerals, and agricultural products",
-        "Automotive Rail - Vehicle transport solutions",
-        "Intermodal Services - Seamless rail-road combinations",
-        "Cross-border Rail - Regional rail network access",
-        "Project Rail - Heavy industrial equipment transport"
-      ]
+title: "International & Domestic Courier",
+description: "Fast and reliable courier services for packages and documents, locally and abroad",
+image: "https://images.unsplash.com/photo-1763752194641-3c5638aec65e?w=600&auto=format&fit=crop&q=80",
+features: [
+  "Same-Day Delivery",
+  "Next-Day Delivery",
+  "International Shipping",
+  "Package Tracking",
+  "Document Delivery",
+  "Reliable & Secure Handling"
+]
+
     }
   ];
 
