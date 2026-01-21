@@ -1,131 +1,136 @@
 import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
-import { Card, CardContent } from "@/components/ui/card";
+import Logo from "@/components/Logo";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Users, Award, Globe, Clock, Shield, Target } from "lucide-react";
+import { 
+  Users, 
+  Award, 
+  Globe, 
+  Clock, 
+  Shield, 
+  Target,
+  CheckCircle,
+  ArrowRight,
+  Truck,
+  Heart,
+  Zap,
+  Eye
+} from "lucide-react";
 
 const About = () => {
+  const stats = [
+    { number: "15+", label: "Years Experience", icon: Clock },
+    { number: "5000+", label: "Shipments Delivered", icon: Truck },
+    { number: "50+", label: "Countries Served", icon: Globe },
+    { number: "99.8%", label: "On-Time Delivery", icon: Target }
+  ];
+
   const values = [
     {
       icon: Shield,
       title: "Reliability",
-      description: "We ensure your cargo reaches its destination safely and on time, every time."
+      description: "We deliver on our promises with consistent, dependable service that you can count on."
     },
     {
-      icon: Globe,
-      title: "Global Reach",
-      description: "Our extensive network spans across continents, connecting businesses worldwide."
+      icon: Zap,
+      title: "Efficiency",
+      description: "Streamlined processes and cutting-edge technology ensure fast, cost-effective solutions."
     },
     {
-      icon: Award,
-      title: "Excellence",
-      description: "Committed to delivering exceptional service quality in every aspect of our operations."
-    },
-    {
-      icon: Users,
+      icon: Heart,
       title: "Customer Focus",
-      description: "Your success is our priority. We tailor solutions to meet your unique needs."
+      description: "Your success is our priority. We tailor our services to meet your unique needs."
+    },
+    {
+      icon: Eye,
+      title: "Transparency",
+      description: "Clear communication and real-time tracking keep you informed every step of the way."
     }
   ];
 
-  const stats = [
-    { number: "15+", label: "Years of Experience" },
-    { number: "50+", label: "Countries Served" },
-    { number: "10,000+", label: "Shipments Delivered" },
-    { number: "24/7", label: "Customer Support" }
+  const team = [
+    {
+      name: "Denis Ncube",
+      role: "Founder & CEO",
+      description: "With over 15 years in logistics, Denis leads our team with vision and expertise.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&auto=format&fit=crop&q=80"
+    },
+    {
+      name: "Sarah Johnson",
+      role: "Operations Manager",
+      description: "Sarah ensures smooth operations and exceptional customer service delivery.",
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&auto=format&fit=crop&q=80"
+    },
+    {
+      name: "Michael Chen",
+      role: "Logistics Coordinator",
+      description: "Michael coordinates complex shipments with precision and attention to detail.",
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&auto=format&fit=crop&q=80"
+    }
+  ];
+
+  const milestones = [
+    {
+      year: "2009",
+      title: "Company Founded",
+      description: "Denis Ncube established Denny N Freight with a vision to simplify logistics."
+    },
+    {
+      year: "2012",
+      title: "Regional Expansion",
+      description: "Extended services to neighboring SADC countries, growing our network."
+    },
+    {
+      year: "2016",
+      title: "International Services",
+      description: "Launched air and sea freight services for global shipping solutions."
+    },
+    {
+      year: "2020",
+      title: "Digital Transformation",
+      description: "Implemented advanced tracking systems and digital customer portals."
+    },
+    {
+      year: "2024",
+      title: "Sustainable Logistics",
+      description: "Committed to eco-friendly practices and carbon-neutral shipping options."
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       <Navigation />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              About Denny N Freight & Logistics Solutions
-            </h1>
-            <p className="text-xl max-w-3xl mx-auto">
-              Your trusted partner in global logistics, connecting businesses worldwide with reliable and efficient freight solutions.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Company Story */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h2>
-              <p className="text-lg text-gray-600 mb-6">
-                Founded with a vision to simplify global trade, Denny N Freight & Logistics Solutions has grown 
-                from a small freight forwarding company to a comprehensive logistics provider serving businesses 
-                across the globe.
-              </p>
-              <p className="text-lg text-gray-600 mb-6">
-                With over 15 years of experience in the industry, we have built strong relationships with 
-                carriers, customs authorities, and logistics partners worldwide. Our expertise spans across 
-                sea freight, air cargo, customs clearance, and courier services.
-              </p>
-              <p className="text-lg text-gray-600">
-                Today, we continue to innovate and expand our services to meet the evolving needs of 
-                international trade, always maintaining our commitment to reliability, transparency, and 
-                customer satisfaction.
-              </p>
-            </div>
-            <div className="relative">
-              <img 
-                src="/images/2.png" 
-                alt="Denny N Freight & Logistics Solutions" 
-                className="rounded-lg shadow-lg w-full"
-              />
-            </div>
-          </div>
+      <section className="freight-hero text-white py-16 px-4">
+        <div className="container mx-auto text-center">
+          <Badge className="mb-6 bg-accent text-accent-foreground hover:bg-accent-glow">
+            About Denny N Freight
+          </Badge>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            Your Trusted <span className="text-accent">Logistics Partner</span>
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+            Since 2009, we've been making logistics simple, reliable, and efficient for businesses across South Africa and beyond.
+          </p>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-blue-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Impact</h2>
-            <p className="text-xl">Numbers that reflect our commitment to excellence</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-4xl md:text-5xl font-bold mb-2">{stat.number}</div>
-                <div className="text-lg text-blue-200">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Values</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              The principles that guide everything we do and shape our relationships with clients and partners
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value, index) => {
-              const IconComponent = value.icon;
+      <section className="py-16 px-4 -mt-8">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {stats.map((stat, index) => {
+              const IconComponent = stat.icon;
               return (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="pt-8 pb-6">
-                    <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <IconComponent className="h-8 w-8 text-blue-600" />
+                <Card key={index} className="freight-card text-center">
+                  <CardContent className="pt-6">
+                    <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
+                      <IconComponent className="h-6 w-6 text-accent-foreground" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
-                    <p className="text-gray-600">{value.description}</p>
+                    <div className="text-3xl font-bold text-primary mb-2">{stat.number}</div>
+                    <div className="text-sm text-muted-foreground">{stat.label}</div>
                   </CardContent>
                 </Card>
               );
@@ -134,25 +139,171 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Target className="h-10 w-10 text-blue-600" />
+      {/* Our Story Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Story</h2>
+              <p className="text-lg text-muted-foreground mb-6">
+                Founded in 2009 by Denis Ncube, Denny N Freight began with a simple mission: to make logistics simple, reliable, and efficient for businesses of all sizes. What started as a local freight service has grown into a comprehensive logistics solution provider serving clients across South Africa and internationally.
+              </p>
+              <p className="text-lg text-muted-foreground mb-6">
+                Our commitment to excellence and customer satisfaction has driven our growth from a small startup to a trusted partner for hundreds of businesses. We've built our reputation on delivering promises, maintaining transparency, and continuously innovating our services.
+              </p>
+              <p className="text-lg text-muted-foreground mb-8">
+                Today, we're proud to offer multi-modal transportation solutions, from road and rail to air and sea freight, backed by cutting-edge technology and a team of dedicated logistics professionals.
+              </p>
+              <Button className="freight-button-accent">
+                Learn More About Our Services
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1565891741441-64926e441838?w=600&auto=format&fit=crop&q=80" 
+                alt="Logistics warehouse operations"
+                className="rounded-lg shadow-2xl"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-lg"></div>
+            </div>
           </div>
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Our Mission</h2>
-          <p className="text-xl text-gray-600 mb-8">
-            To provide reliable, efficient, and cost-effective logistics solutions that enable businesses 
-            to thrive in the global marketplace. We are committed to building lasting partnerships through 
-            exceptional service, innovative solutions, and unwavering integrity.
-          </p>
-          <Button asChild size="lg">
-            <Link to="/contact">Partner with Us</Link>
-          </Button>
         </div>
       </section>
 
-      <Footer />
+      {/* Values Section */}
+      <section className="py-20 px-4 bg-muted/50">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Values</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              The principles that guide everything we do and shape our commitment to excellence
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {values.map((value, index) => {
+              const IconComponent = value.icon;
+              return (
+                <Card key={index} className="freight-card text-center group hover:border-accent">
+                  <CardHeader>
+                    <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-accent group-hover:text-accent-foreground transition-all duration-300">
+                      <IconComponent className="h-8 w-8 text-accent group-hover:text-accent-foreground" />
+                    </div>
+                    <CardTitle className="text-xl">{value.title}</CardTitle>
+                    <CardDescription className="text-base">
+                      {value.description}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Journey</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Key milestones in our growth and evolution as a logistics leader
+            </p>
+          </div>
+          
+          <div className="relative">
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-accent/20"></div>
+            <div className="space-y-12">
+              {milestones.map((milestone, index) => (
+                <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                    <Card className="freight-card">
+                      <CardHeader>
+                        <div className="flex items-center justify-between">
+                          <Badge className="bg-accent text-accent-foreground">{milestone.year}</Badge>
+                        </div>
+                        <CardTitle className="text-xl">{milestone.title}</CardTitle>
+                        <CardDescription className="text-base">
+                          {milestone.description}
+                        </CardDescription>
+                      </CardHeader>
+                    </Card>
+                  </div>
+                  <div className="w-4 h-4 bg-accent rounded-full border-4 border-background shadow-lg z-10"></div>
+                  <div className="w-1/2"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-20 px-4 bg-muted/50">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Team</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              The dedicated professionals who make your logistics success possible
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {team.map((member, index) => (
+              <Card key={index} className="freight-card text-center">
+                <CardHeader>
+                  <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <CardTitle className="text-xl">{member.name}</CardTitle>
+                  <Badge className="bg-accent text-accent-foreground mx-auto">{member.role}</Badge>
+                  <CardDescription className="text-base mt-4">
+                    {member.description}
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 bg-primary text-primary-foreground">
+        <div className="container mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Experience the Difference?
+          </h2>
+          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+            Join hundreds of satisfied customers who trust Denny N Freight for their logistics needs.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent-glow px-8 py-4 text-lg">
+              Get Started Today
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-4 text-lg">
+              Contact Our Team
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-background border-t border-border py-12 px-4">
+        <div className="container mx-auto text-center">
+          <div className="flex justify-center mb-4">
+            <Logo size="md" showText={true} />
+          </div>
+          <p className="text-muted-foreground">
+            &copy; 2024 Denny N Freight & Logistics Solutions. All rights reserved.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };

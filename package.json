@@ -1,8 +1,23 @@
 {
   "name": "vite_react_shadcn_ts",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
+  "description": "This project is built using the following technologies:",
+  "homepage": "https://github.com/linperse/denny-n-freight#readme",
+  "bugs": {
+    "url": "https://github.com/linperse/denny-n-freight/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linperse/denny-n-freight.git"
+  },
+  "license": "ISC",
+  "author": "",
   "type": "module",
+  "main": "eslint.config.js",
+  "directories": {
+    "example": "examples"
+  },
   "scripts": {
     "dev": "cross-env VITE_ENABLE_ROUTE_MESSAGING=true vite",
     "build": "vite build",
