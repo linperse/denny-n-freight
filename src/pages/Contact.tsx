@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Link } from "react-router-dom";
 import { 
   Phone, 
   Mail, 
@@ -25,7 +26,7 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["+27 (0) 123 456 789", "+27 (0) 987 654 321"],
+      details: ["+27734296828", "+27 (0) 987 654 321"],
       description: "Call us for immediate assistance"
     },
     {
@@ -37,7 +38,7 @@ const Contact = () => {
     {
       icon: MapPin,
       title: "Address",
-      details: ["123 Logistics Avenue", "Cape Town, 8001", "South Africa"],
+      details: ["3 Pretoria & End Street", "Kempton Park, Gauteng, 1619", "South Africa"],
       description: "Visit our main office"
     },
     {
@@ -52,7 +53,7 @@ const Contact = () => {
     {
       city: "Cape Town",
       type: "Head Office",
-      address: "123 Logistics Avenue, Cape Town, 8001",
+      address: "3 Pretoria & End Street, Kempton Park, Gauteng, 1619",
       phone: "+27 (0) 21 123 4567",
       email: "capetown@dennynfreight.co.za"
     },
@@ -192,7 +193,7 @@ const Contact = () => {
             </div>
             
             {/* Contact Information */}
-            <div>
+            <div id="contact-info">
               <h2 className="text-3xl font-bold mb-6">Get In Touch</h2>
               <p className="text-muted-foreground mb-8">
                 We're here to help with all your logistics needs. Reach out through any of these channels.
@@ -347,11 +348,13 @@ const Contact = () => {
             Don't wait - get your personalized shipping quote today and experience the Denny N Freight difference.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-4 text-lg">
-              <FileText className="mr-2 h-5 w-5" />
-              Get Instant Quote
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-4 text-lg" asChild>
+              <Link to="/get-quote">
+                <FileText className="mr-2 h-5 w-5" />
+                Get Instant Quote
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-4 text-lg">
+            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-4 text-lg" onClick={() => document.getElementById('contact-info')?.scrollIntoView({ behavior: 'smooth' })}>
               <Phone className="mr-2 h-5 w-5" />
               Call Expert Now
             </Button>

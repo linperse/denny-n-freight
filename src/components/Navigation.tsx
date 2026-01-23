@@ -18,13 +18,13 @@ const Navigation = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
-  const LogoSection = () => <Logo size="md" showText={true} />;
+  const LogoSection = () => <Logo size="lg" showText={true} />;
 
   return (
     <nav className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 w-full border-b border-border">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex-shrink-0">
+      <div className="px-4">
+        <div className="flex items-center justify-between h-20">
+          <Link to="/" className="flex-shrink-0 ml-4">
             <LogoSection />
           </Link>
 
@@ -43,8 +43,8 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Button className="freight-button-accent">
-              Get Quote
+            <Button className="freight-button-accent" asChild>
+              <Link to="/get-quote">Get Quote</Link>
             </Button>
           </div>
 
@@ -74,8 +74,8 @@ const Navigation = () => {
                         {item.name}
                       </Link>
                     ))}
-                    <Button className="freight-button-accent w-full mt-4">
-                      Get Quote
+                    <Button className="freight-button-accent w-full mt-4" asChild>
+                      <Link to="/get-quote">Get Quote</Link>
                     </Button>
                   </div>
                 </div>

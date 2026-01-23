@@ -3,11 +3,12 @@ import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { 
   Truck, 
   Plane, 
   Ship, 
-  Train, 
+  Package, 
   Clock, 
   Shield, 
   Globe, 
@@ -39,7 +40,7 @@ const Index = () => {
       features: ["Express Air", "Standard Air", "Charter Services"]
     },
     {
-  icon: Train,
+  icon: Package,
   title: "International & Domestic Courier",
   description: "Fast and reliable courier services for local and international deliveries",
   features: ["Door-to-Door Delivery", "Express Shipping", "Worldwide Coverage"]
@@ -70,9 +71,26 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="freight-hero text-white py-20 px-4">
-        <div className="container mx-auto text-center">
-          <Badge className="mb-6 bg-accent text-accent-foreground hover:bg-accent-glow">
+      <section className="relative text-white py-20 px-4 overflow-hidden">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover slow-motion"
+        >
+          <source src="public/images/265858_small.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-primary/70"></div>
+        <div className="container mx-auto text-center relative z-10">
+          <div className="w-64 h-64 md:w-80 md:h-80 flex items-center justify-center mx-auto mb-8">
+            <img
+              src="/images/Black_Logo.png"
+              alt="Denny N Freight Logo"
+              className="w-full h-full object-contain filter brightness-0 invert drop-shadow-2xl animate-spin-in"
+            />
+          </div>
+          <Badge className="mb-6 bg-accent text-accent-foreground hover:bg-accent-glow animate-pulse">
             Logistics Made Simple, Reliable, and Efficient
           </Badge>
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
@@ -83,12 +101,11 @@ const Index = () => {
             From road to rail, sea to sky - we deliver your cargo safely and on time across South Africa and beyond.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent-glow px-8 py-4 text-lg">
-              Get Free Quote
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary px-8 py-4 text-lg">
-              Track Shipment
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent-glow px-8 py-4 text-lg" asChild>
+              <Link to="/get-quote">
+                Get Free Quote
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
           </div>
         </div>
@@ -172,13 +189,17 @@ const Index = () => {
             Get in touch with our logistics experts for a customized shipping solution
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent-glow px-8 py-4 text-lg">
-              <Phone className="mr-2 h-5 w-5" />
-              Call Now
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent-glow px-8 py-4 text-lg" asChild>
+              <Link to="/contact">
+                <Phone className="mr-2 h-5 w-5" />
+                Call Now
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-4 text-lg">
-              <Mail className="mr-2 h-5 w-5" />
-              Email Us
+            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-4 text-lg" asChild>
+              <Link to="/contact">
+                <Mail className="mr-2 h-5 w-5" />
+                Email Us
+              </Link>
             </Button>
           </div>
         </div>
@@ -201,7 +222,6 @@ const Index = () => {
                 <li><a href="/services" className="hover:text-primary transition-colors">Services</a></li>
                 <li><a href="/about" className="hover:text-primary transition-colors">About Us</a></li>
                 <li><a href="/contact" className="hover:text-primary transition-colors">Contact</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Track Shipment</a></li>
               </ul>
             </div>
             
@@ -214,11 +234,11 @@ const Index = () => {
                 </li>
                 <li className="flex items-center">
                   <Phone className="h-4 w-4 mr-2" />
-                  +27 (0) 123 456 789
+                  +27734296828
                 </li>
                 <li className="flex items-center">
                   <MapPin className="h-4 w-4 mr-2" />
-                  Cape Town, South Africa
+                  3 Pretoria & End Street, Kempton Park, Gauteng, 1619
                 </li>
               </ul>
             </div>

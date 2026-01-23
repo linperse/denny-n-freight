@@ -127,4 +127,82 @@
 .freight-button-accent {
     @apply bg-accent text-accent-foreground hover:bg-accent/90 px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg;
   }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes slide-right {
+    0%, 100% { transform: translateX(0px); }
+    50% { transform: translateX(30px); }
+  }
+  
+  @keyframes slide-left {
+    0%, 100% { transform: translateX(0px); }
+    50% { transform: translateX(-30px); }
+  }
+  
+  @keyframes slide-up {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-25px); }
+  }
+  
+  @keyframes slide-down {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(25px); }
+  }
+  
+  @keyframes slide-diagonal {
+    0%, 100% { transform: translate(0px, 0px); }
+    50% { transform: translate(20px, -20px); }
+  }
+  
+  @keyframes slide-diagonal-reverse {
+    0%, 100% { transform: translate(0px, 0px); }
+    50% { transform: translate(-20px, 20px); }
+  }
+  
+  .animate-slide-right {
+    animation: slide-right 4s ease-in-out infinite;
+  }
+  
+  .animate-slide-left {
+    animation: slide-left 3.5s ease-in-out infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 4.5s ease-in-out infinite;
+  }
+  
+  .animate-slide-down {
+    animation: slide-down 3s ease-in-out infinite;
+  }
+  
+  .animate-slide-diagonal {
+    animation: slide-diagonal 5s ease-in-out infinite;
+  }
+  
+  .animate-slide-diagonal-reverse {
+    animation: slide-diagonal-reverse 4.2s ease-in-out infinite;
+  }
+
+  @keyframes spin-in {
+    0% { 
+      transform: rotate(0deg) scale(0.3) translateY(-100px);
+      opacity: 0;
+    }
+    100% { 
+      transform: rotate(360deg) scale(1) translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .animate-spin-in {
+    animation: spin-in 2s ease-out forwards;
+  }
 }

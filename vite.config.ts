@@ -210,6 +210,9 @@ export default defineConfig(({ mode }) => {
     server: {
       host: "::",
       port: 8080,
+       allowedHosts: [
+    "wrathfully-nonvalid-harry.ngrok-free.dev"
+  ]
     },
     plugins: [
       react(),

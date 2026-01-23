@@ -3,6 +3,7 @@ import Logo from "@/components/Logo";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { 
   Users, 
   Award, 
@@ -41,11 +42,6 @@ const About = () => {
       icon: Heart,
       title: "Customer Focus",
       description: "Your success is our priority. We tailor our services to meet your unique needs."
-    },
-    {
-      icon: Eye,
-      title: "Transparency",
-      description: "Clear communication and real-time tracking keep you informed every step of the way."
     }
   ];
 
@@ -181,7 +177,7 @@ const About = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {values.map((value, index) => {
               const IconComponent = value.icon;
               return (
@@ -198,43 +194,6 @@ const About = () => {
                 </Card>
               );
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Journey</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Key milestones in our growth and evolution as a logistics leader
-            </p>
-          </div>
-          
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-accent/20"></div>
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => (
-                <div key={index} className={`flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                    <Card className="freight-card">
-                      <CardHeader>
-                        <div className="flex items-center justify-between">
-                          <Badge className="bg-accent text-accent-foreground">{milestone.year}</Badge>
-                        </div>
-                        <CardTitle className="text-xl">{milestone.title}</CardTitle>
-                        <CardDescription className="text-base">
-                          {milestone.description}
-                        </CardDescription>
-                      </CardHeader>
-                    </Card>
-                  </div>
-                  <div className="w-4 h-4 bg-accent rounded-full border-4 border-background shadow-lg z-10"></div>
-                  <div className="w-1/2"></div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
@@ -282,12 +241,16 @@ const About = () => {
             Join hundreds of satisfied customers who trust Denny N Freight for their logistics needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent-glow px-8 py-4 text-lg">
-              Get Started Today
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent-glow px-8 py-4 text-lg" asChild>
+              <Link to="/get-quote">
+                Get Started Today
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-4 text-lg">
-              Contact Our Team
+            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-4 text-lg" asChild>
+              <Link to="/contact">
+                Contact Our Team
+              </Link>
             </Button>
           </div>
         </div>

@@ -3,6 +3,7 @@ import Logo from "@/components/Logo";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { 
   Truck, 
   Plane, 
@@ -63,7 +64,7 @@ const Services = () => {
       ]
     },
     {
-      icon: Train,
+      icon: Package,
 title: "International & Domestic Courier",
 description: "Fast and reliable courier services for packages and documents, locally and abroad",
 image: "https://images.unsplash.com/photo-1763752194641-3c5638aec65e?w=600&auto=format&fit=crop&q=80",
@@ -86,24 +87,9 @@ features: [
       description: "Secure storage and distribution facilities with inventory management"
     },
     {
-      icon: FileText,
-      title: "Customs Clearance",
-      description: "Expert customs brokerage and documentation services"
-    },
-    {
-      icon: Package,
-      title: "Packaging & Crating",
-      description: "Professional packaging solutions for safe transport"
-    },
-    {
       icon: Globe,
       title: "Supply Chain Management",
       description: "End-to-end supply chain optimization and consulting"
-    },
-    {
-      icon: Shield,
-      title: "Cargo Insurance",
-      description: "Comprehensive insurance coverage for your valuable cargo"
     },
     {
       icon: Clock,
@@ -161,9 +147,11 @@ features: [
                       ))}
                     </div>
                     
-                    <Button className="freight-button-accent">
-                      Get Quote for {service.title.split(' ')[0]} Freight
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                    <Button className="freight-button-accent" asChild>
+                      <Link to={`/get-quote?service=${service.title.split(' ')[0].toLowerCase()}`}>
+                        Get Quote for {service.title.split(' ')[0]} Freight
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
                     </Button>
                   </div>
                   
@@ -225,12 +213,16 @@ features: [
             Our logistics experts are ready to design a tailored solution for your specific shipping requirements.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent-glow px-8 py-4 text-lg">
-              Request Custom Quote
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent-glow px-8 py-4 text-lg" asChild>
+              <Link to="/get-quote">
+                Request Custom Quote
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-4 text-lg">
-              Speak with Expert
+            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8 py-4 text-lg" asChild>
+              <Link to="/contact">
+                Speak with Expert
+              </Link>
             </Button>
           </div>
         </div>

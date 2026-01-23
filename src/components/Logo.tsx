@@ -19,9 +19,9 @@ const sizeClasses = {
     subtext: "text-sm"
   },
   lg: {
-    container: "w-36 h-36",   // large
-    text: "text-2xl",
-    subtext: "text-base"
+    container: "w-20 h-20",   // large
+    text: "text-3xl",
+    subtext: "text-lg"
   }
 };
 
